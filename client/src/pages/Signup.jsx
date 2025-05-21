@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import api from '../api';
 import { AuthContext } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -22,6 +23,9 @@ export default function Signup() {
       <input placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
       <input placeholder="Password" type="password" value={pw} onChange={e=>setPw(e.target.value)} />
       <button type="submit">Sign Up</button>
+      <Link to="/login">
+        <button type="button">Login</button>
+      </Link>
       </div>
     </form>
   );
